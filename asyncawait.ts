@@ -37,24 +37,24 @@ const checkStudyEnergy = () => {
 
 // // part 2.Fetching Data from an API- (using country details API)-
 
-// const fetchCountryData = async () => {
-//     try {
-//         const response = await fetch(`https://restcountries.com/v3.1/name/${"Hungary"}`);
-//         if (!response.ok) {
-//             throw new Error("Response was not ok !")
-//         }
+const fetchCountryData = async () => {
+    try {
+        const response = await fetch(`https://restcountries.com/v3.1/name/${"Hungary"}`);
+        if (!response.ok) {
+            throw new Error("Response was not ok !")
+        }
 
-//         const data = await response.json();
-//         console.log("Country:-", data[0].name.official);
-//         console.log("Capital:- ", data[0].capital);
-//         console.log("Region:-", data[0].region)
+        const data = await response.json();
+        console.log("Country:-", data[0].name.official);
+        console.log("Capital:- ", data[0].capital);
+        console.log("Region:-", data[0].region)
 
-//     } catch (error) {
-//         console.log(error);
+    } catch (error) {
+        console.log(error);
 
-//     }
-// };
-// fetchCountryData();
+    }
+};
+fetchCountryData();
 
 
 
@@ -82,8 +82,8 @@ const runStudyandFetch = async () => {
     try {
         const message = await checkStudyEnergy();
         console.log(message);
-        
-        const response = await fetch((`https://restcountries.com/v3.1/name/${"Hungary"}`) );
+
+        const response = await fetch((`https://restcountries.com/v3.1/name/${"Sweden"}`) );
         const data = await response.json();
         console.log("Country:- ", data[0].name.official);
         console.log("Capital:- ", data[0].capital);
