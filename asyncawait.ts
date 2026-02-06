@@ -14,15 +14,15 @@ const checkStudyEnergy = () => {
     });
 }
 
-const output = async () => {
-    try {
-        const message = await checkStudyEnergy();
-        console.log(message);
-    } catch (error) {
-        console.log(error);
-    }
-};
-output();
+// const output = async () => {
+//     try {
+//         const message = await checkStudyEnergy();
+//         console.log(message);
+//     } catch (error) {
+//         console.log(error);
+//     }
+// };
+// output();
 
 // checkStudyEnergy()
 //     .then((message) => {
@@ -35,43 +35,61 @@ output();
 
 
 
-// part 2.Fetching Data from an API- (using country details API)-
+// // part 2.Fetching Data from an API- (using country details API)-
 
-const fetchCountryData = async () => {
+// const fetchCountryData = async () => {
+//     try {
+//         const response = await fetch(`https://restcountries.com/v3.1/name/${"Hungary"}`);
+//         if (!response.ok) {
+//             throw new Error("Response was not ok !")
+//         }
+
+//         const data = await response.json();
+//         console.log("Country:-", data[0].name.official);
+//         console.log("Capital:- ", data[0].capital);
+//         console.log("Region:-", data[0].region)
+
+//     } catch (error) {
+//         console.log(error);
+
+//     }
+// };
+// fetchCountryData();
+
+
+
+// // const result = await (`https://restcountries.com/v3.1/name/${countryname}`)
+// //     .then((response) => response.json())
+// //     .then((data) => {
+// //         console.log(" 🌍 Country :-" , data[0].name.official)
+// //         console.log(" 🏛️ Capital :-", data[0].capital[0])
+// //         console.log(" 🌐 Region :-", data[0].region)
+// //     })
+// //     .catch((error) => {
+// //         console.log('error fetching data:', error);
+// //     })
+// // };
+
+// // fetchCountryData("sweden");
+// // fetchCountryData("italy");
+// // fetchCountryData("france");
+
+
+
+
+//Part3.Combining the Promises and Fetch with Async/Await  -
+const runStudyandFetch = async () => {
     try {
-        const response = await fetch(`https://restcountries.com/v3.1/name/${"Hungary"}`);
-        if (!response.ok) {
-            throw new Error("Response was not ok !")
-        }
-
+        const message = await checkStudyEnergy();
+        console.log(message);
+        
+        const response = await fetch((`https://restcountries.com/v3.1/name/${"Hungary"}`) );
         const data = await response.json();
-        console.log("Country:-", data[0].name.official);
+        console.log("Country:- ", data[0].name.official);
         console.log("Capital:- ", data[0].capital);
-        console.log("Region:-", data[0].region)
 
     } catch (error) {
-        console.log(error);
-
+        console.log("Error fetching data", error);
     }
 };
-
-fetchCountryData();
-
-// const result = await (`https://restcountries.com/v3.1/name/${countryname}`)
-//     .then((response) => response.json())
-//     .then((data) => {
-//         console.log(" 🌍 Country :-" , data[0].name.official)
-//         console.log(" 🏛️ Capital :-", data[0].capital[0])
-//         console.log(" 🌐 Region :-", data[0].region)
-//     })
-//     .catch((error) => {
-//         console.log('error fetching data:', error);
-//     })
-// };
-
-// fetchCountryData("sweden");
-// fetchCountryData("italy");
-// fetchCountryData("france");
-
-
-
+runStudyandFetch();
