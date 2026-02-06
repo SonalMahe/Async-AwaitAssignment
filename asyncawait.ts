@@ -14,15 +14,15 @@ const checkStudyEnergy = () => {
     });
 }
 
-// const output = async () => {
-//     try {
-//         const message = await checkStudyEnergy();
-//         console.log(message);
-//     } catch (error) {
-//         console.log(error);
-//     }
-// };
-// output();
+const output = async () => {
+    try {
+        const message = await checkStudyEnergy();
+        console.log(message);
+    } catch (error) {
+        console.log(error);
+    }
+};
+output();
 
 // checkStudyEnergy()
 //     .then((message) => {
@@ -83,7 +83,7 @@ const runStudyandFetch = async () => {
         const message = await checkStudyEnergy();
         console.log(message);
 
-        const response = await fetch((`https://restcountries.com/v3.1/name/${"Sweden"}`) );
+        const response = await fetch((`https://restcountries.com/v3.1/name/${"Sweden"}`));
         const data = await response.json();
         console.log("Country:- ", data[0].name.official);
         console.log("Capital:- ", data[0].capital);
